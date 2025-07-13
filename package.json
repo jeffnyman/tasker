@@ -15,9 +15,20 @@
     "preview": "vite preview --host",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "lint:staged": "lint-staged",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts,tsx}": [
+      "eslint --quiet --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{json,css,scss}": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -43,6 +54,8 @@
     "eslint-plugin-react-x": "^1.52.3",
     "eslint-plugin-storybook": "^9.0.16",
     "globals": "^16.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.1.2",
     "playwright": "^1.54.1",
     "prettier": "3.6.2",
     "storybook": "^9.0.16",
