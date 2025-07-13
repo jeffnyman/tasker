@@ -52,6 +52,7 @@
 
 :root {
   --ff-base: "Montserrat", sans-serif;
+  --ff-icon: "percolate";
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -132,6 +133,49 @@ input[type="text"] {
 
 .list-item:hover {
   background-image: linear-gradient(to bottom, #e5f9f7 0%, #f0fffd 100%);
+}
+
+.list-item:hover .checkbox {
+  cursor: pointer;
+}
+
+.list-item.TASK_ARCHIVED input[type="text"] {
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 3rem;
+  width: 44px;
+}
+
+.checkbox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkbox input[type="checkbox"] + span:before {
+  position: absolute;
+  display: block;
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  width: 0.85em;
+  height: 0.85em;
+  content: "";
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: #2cc5d2 0 0 0 1px inset;
+  background: transparent;
+}
+
+.checkbox input[type="checkbox"]:checked + span:before {
+  font-family: var(--ff-icon);
+  content: "\e65e";
+  color: #2cc5d2;
+  line-height: 1em;
 }
 
 @media (prefers-color-scheme: light) {
