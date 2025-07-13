@@ -6,6 +6,7 @@ This is the data contract.
 
 interface TaskData {
   id: string;
+  title: string;
 }
 
 /*
@@ -23,6 +24,10 @@ Task represents the component implementation. This is the
 presentation logic.
 */
 
-export default function Task({ task: { id } }: TaskProps) {
-  return <div>Task {id}</div>;
+export default function Task({ task: { id, title } }: TaskProps) {
+  return (
+    <div>
+      Task {id} - {title}
+    </div>
+  );
 }

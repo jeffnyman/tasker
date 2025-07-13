@@ -12,7 +12,7 @@ function App() {
         <h1>Tasker</h1>
       </header>
       <main>
-        <Task task={{ id: "1" }}></Task>
+        <Task task={{ id: "1", title: "Test Task" }}></Task>
       </main>
       <footer>
         <p>

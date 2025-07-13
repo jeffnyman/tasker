@@ -26,6 +26,7 @@ export const Default: Story = {
   args: {
     task: {
       id: "1",
+      title: "Test Task",
     },
   },
 };
