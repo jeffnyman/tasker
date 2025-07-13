@@ -3,6 +3,7 @@ import viteLogo from "./assets/vite.svg";
 import typescriptLogo from "./assets/typescript.svg";
 
 import "./App.css";
+import Task from "./components/Task";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <h1>Tasker</h1>
       </header>
       <main>
-        <p>App Content Goes Here</p>
+        <Task></Task>
       </main>
       <footer>
         <p>
