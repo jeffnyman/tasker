@@ -14,6 +14,8 @@ the props contract.
 
 interface TaskProps {
   task: TaskData;
+  onArchiveTask: (id: string) => void;
+  onPinTask: (id: string) => void;
 }
 
 /*
@@ -21,7 +23,11 @@ Task represents the component implementation. This is the
 presentation logic.
 */
 
-export default function Task({ task: { id, title, state } }: TaskProps) {
+export default function Task({
+  task: { id, title, state },
+  onArchiveTask,
+  onPinTask,
+}: TaskProps) {
   return (
     <div className={`list-item ${state}`}>
       <label
@@ -36,7 +42,11 @@ export default function Task({ task: { id, title, state } }: TaskProps) {
           disabled={true}
           checked={state === "TASK_ARCHIVED"}
         ></input>
-        <span></span>
+        <span
+          onClick={() => {
+            onArchiveTask(id);
+          }}
+        ></span>
       </label>
 
       <label className="title" htmlFor={`title-${id}`} aria-label={title}>
@@ -56,6 +66,9 @@ export default function Task({ task: { id, title, state } }: TaskProps) {
           id={`pinTask-${id}`}
           type="button"
           aria-label={`pinTask-${id}`}
+          onClick={() => {
+            onPinTask(id);
+          }}
         >
           <span className="icon-star"></span>
         </button>
