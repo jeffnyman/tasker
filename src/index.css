@@ -73,6 +73,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--fs-base);
+  background-color: #26c6da;
 }
 
 h1 {
