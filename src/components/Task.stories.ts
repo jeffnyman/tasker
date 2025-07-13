@@ -27,6 +27,7 @@ export const Default: Story = {
     task: {
       id: "1",
       title: "Test Task",
+      state: "TASK_INBOX",
     },
   },
 };
