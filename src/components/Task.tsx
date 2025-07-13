@@ -27,8 +27,16 @@ presentation logic.
 
 export default function Task({ task: { id, title, state } }: TaskProps) {
   return (
-    <div>
-      Task {id} - {title} : {state}
+    <div className="list-item">
+      <label htmlFor={`title-${id}`} aria-label={title}>
+        <input
+          id={`title-${id}`}
+          name="title"
+          type="text"
+          value={title + state}
+          readOnly={true}
+        ></input>
+      </label>
     </div>
   );
 }
