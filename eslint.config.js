@@ -7,6 +7,7 @@ import tseslint from "typescript-eslint";
 import reactDom from "eslint-plugin-react-dom";
 import reactX from "eslint-plugin-react-x";
 import { globalIgnores } from "eslint/config";
+import prettierEslint from "eslint-config-prettier";
 
 export default tseslint.config(
   [
@@ -21,6 +22,7 @@ export default tseslint.config(
         reactX.configs["recommended-typescript"],
         reactHooks.configs["recommended-latest"],
         reactRefresh.configs.vite,
+        prettierEslint,
       ],
       languageOptions: {
         ecmaVersion: 2020,
